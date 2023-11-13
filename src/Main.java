@@ -1,5 +1,6 @@
 import telefone.Contato;
 import telefone.Contatos;
+import telefone.Ligacao;
 import telefone.Telefone;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -11,6 +12,11 @@ public class Main {
 
         Telefone telefone = new Telefone("4002 8922");
         Contatos telefoneContatos = telefone.getContatos();
+
+
+        Ligacao ligacao = new Ligacao("123", "456");
+        ligacao.ligar();
+        System.out.println(ligacao);
 
         while (true) {
             try {
