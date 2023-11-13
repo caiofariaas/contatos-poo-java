@@ -13,11 +13,6 @@ public class Main {
         Telefone telefone = new Telefone("4002 8922");
         Contatos telefoneContatos = telefone.getContatos();
 
-
-        Ligacao ligacao = new Ligacao("123", "456");
-        ligacao.ligar();
-        System.out.println(ligacao);
-
         while (true) {
             try {
                 System.out.print("Quantos contatos você deseja adicionar em sua lista de contatos?: ");
@@ -45,7 +40,8 @@ public class Main {
 
         System.out.println(telefone.getContatos());
 
-        System.out.print("Deseja procurar algum contato? (1 para sim, 0 para não): ");
+        System.out.println("Oque deseja fazer?\n");
+        System.out.print("1 <- Buscar contatos\n2 <- Fazer uma ligação\nR: ");
         int opt = scan.nextInt();
         scan.nextLine();
 
@@ -53,8 +49,20 @@ public class Main {
             System.out.print("Quais as iniciais do contato?: ");
             String iniciais = scan.nextLine();
 
-            System.out.println("Contatos encontrados: ");
+            System.out.println("\nContatos encontrados: ");
             System.out.println(telefoneContatos.buscar(iniciais));
         }
+        else if (opt == 2) {
+
+            System.out.println("--------------------------------");
+            System.out.print("para que número deseja ligar?: ");
+            String num = scan.nextLine();
+
+            Ligacao ligacao = new Ligacao("123", num);
+            ligacao.ligar();
+            System.out.println(ligacao);
+        }
+
+
     }
 }
