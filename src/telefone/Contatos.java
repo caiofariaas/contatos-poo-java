@@ -36,7 +36,6 @@ public class Contatos {
            return contatosFiltrados;
     }
 
-
     public ArrayList<Contato> getContatos() {
         return contatos;
     }

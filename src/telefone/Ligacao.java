@@ -1,6 +1,7 @@
 package telefone;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import telefone.*;
 
 public class Ligacao {
     private String numeroOrigem;
@@ -44,6 +45,6 @@ public class Ligacao {
 
     @Override
     public String toString() {
-        return String.format("Origem: %s\nDestino: %s\tHorario: %s", numeroOrigem, numeroDestino, horarioLigacao);
+        return String.format("Origem: %s\nDestino: %s\nHorario: %s", numeroOrigem, numeroDestino, horarioLigacao);
     }
 }

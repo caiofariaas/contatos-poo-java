@@ -28,8 +28,6 @@ public class Contato {
     @Override
     public String toString() {
         //Nome: <nome>\tNumero: <numero>
-
-        String informacao = String.format("Nome: %s\tNúmero: %s", nome, numero);
-        return informacao;
+        return String.format("Nome: %s\tNúmero: %s", nome, numero);
     }
 }

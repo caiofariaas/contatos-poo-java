@@ -1,7 +1,4 @@
-import telefone.Contato;
-import telefone.Contatos;
-import telefone.Ligacao;
-import telefone.Telefone;
+import telefone.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -10,8 +7,12 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int qtd = 0;
 
-        Telefone telefone = new Telefone("4002 8922");
+        System.out.print("Qual o número do seu telefone: ");
+        String tel = scan.nextLine();
+
+        Telefone telefone = new Telefone(tel);
         Contatos telefoneContatos = telefone.getContatos();
+        Chamadas chamadas = new Chamadas();
 
         while (true) {
             try {
@@ -28,10 +29,10 @@ public class Main {
         }
 
         for (int i = 0; i < qtd; i++) {
-            System.out.println(String.format("Qual o nome do contato %d:", i + 1));
+            System.out.print(String.format("Qual o nome do contato %d: ", i + 1));
             String nome = scan.nextLine();
 
-            System.out.println(String.format("Qual o número do contato %d:", i + 1));
+            System.out.print(String.format("Qual o número do contato %d: ", i + 1));
             String numero = scan.nextLine();
 
             Contato contato = new Contato(nome, numero);
@@ -58,9 +59,11 @@ public class Main {
             System.out.print("para que número deseja ligar?: ");
             String num = scan.nextLine();
 
-            Ligacao ligacao = new Ligacao("123", num);
+            Ligacao ligacao = new Ligacao(telefone.getNumeroChip(), num);
             ligacao.ligar();
             System.out.println(ligacao);
+            chamadas.adicionar(ligacao);
+            System.out.println(chamadas);
         }
 
 
